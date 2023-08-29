@@ -1,0 +1,28 @@
+NEXTAUTH_SECRET=
+NEXTAUTH_URL=
+
+#githun Credential
+GITHUB_ID=
+GITHUB_SECRET=
+#Google Credentials
+GOOGLE_ID
+GOOGLE_SECRET
+#Facebook Credentials
+FACEBOOK_ID
+FACEBOOK_SECRET
+#Twitter Credentials
+TWITTER_ID
+TWITTER_SECRET
+#Auth0 Credentials
+AUTH0_ID
+AUTH0_SECRET
+AUTH0_ISSUER
+#Apple Credentials
+APPLE_ID
+APPLE_SECRET
+#Linkedlin Credentials
+Linkedin_ID
+Linkedin_SECRET
+#Coinbase Credentials
+Coinbase_ID
+Coinbase_SECRET
