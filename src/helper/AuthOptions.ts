@@ -10,6 +10,7 @@
 
 import { NextAuthOptions } from "next-auth";
 import { authProviders } from "./ProvidersList";
+import { error } from "console";
 
 export const authOptions: NextAuthOptions = {
   session: {
@@ -33,6 +34,9 @@ export const authOptions: NextAuthOptions = {
   providers: authProviders,
   pages: {
     signOut: "/",
+    signIn: "/login",
+    error: "/login",
+    newUser:"/user"
   },
   callbacks: {
     async signIn({ account, user }) {

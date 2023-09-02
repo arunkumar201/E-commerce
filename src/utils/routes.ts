@@ -1,18 +1,37 @@
-export interface RoutesType {
+import { FaFemale, FaHome, FaLaptop, FaMale } from "react-icons/fa";
+
+import { IconType } from "react-icons";
+
+export interface RouteType {
 	href: string;
 	label: string;
+	icon:  IconType;
+	description: string;
 }
-export const MyRoutes:RoutesType[] = [
+
+export const MyRoutes = [
 	{
-		href: "/",
-		label: "Products",
+		href: "/women",
+		label: "Women",
+		icon: FaFemale,
+		description: "Explore the latest fashion trends for women",
 	},
 	{
-		href: "/",
-		label: "Categories",
+		href: "/men",
+		label: "Men",
+		icon: FaMale,
+		description: "Discover stylish clothing for men",
 	},
 	{
-		href: "/",
-		label: "On Sale",
+		href: "/electronics",
+		label: "Electronics",
+		icon: FaLaptop,
+		description: "Shop for the latest gadgets and devices",
+	},
+	{
+		href: "/home",
+		label: "Home and Kitchen",
+		icon: FaHome,
+		description: "Find everything you need to furnish your home",
 	},
 ];

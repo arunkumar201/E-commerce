@@ -3,7 +3,7 @@
 import {} from "react-icons/bs";
 
 import { BsMoonStars as Moon, BsFillSunFill as Sun } from "react-icons/bs";
-import { MyRoutes, RoutesType } from "@/utils/routes";
+import { MyRoutes, RouteType } from "@/utils/routes";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { signOut, useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
@@ -20,7 +20,7 @@ import { useTheme } from "next-themes";
 
 const Navbar = () => {
 	const { theme, setTheme } = useTheme();
-	const routes: RoutesType[] = MyRoutes;
+	const routes: RouteType[] = MyRoutes;
 	const [currentBtn, setCurrentBtn] = useState<string>("Sign-In");
 	const pathname = usePathname();
 	const router = useRouter();
@@ -43,9 +43,9 @@ const Navbar = () => {
 	};
 
 	return (
-		<header className="sm:flex sm:justify-between py-3 px-4 border-b bg-gray-600 ">
+		<header className="sm:flex z-50 w-full sm:justify-between py-3 px-4 border-b dark:bg-[#115173] bg-[#003F5C] fixed">
 			<Container>
-				<div className="relative px-4 sm:px-6 lg:px-8 flex  h-12  items-center justify-between w-full">
+				<div className="relative  px-4 sm:px-6 lg:px-8 flex  h-12  items-center w-full justify-between ">
 					<div className="flex items-center">
 						<Sheet>
 							<SheetTrigger>
@@ -74,26 +74,29 @@ const Navbar = () => {
 								className="rounded-sm -mr-2"
 							/>
 
-							<Link href="/" className="ml-4 lg:ml-0">
-								<h1 className="text-xl font-bold">E-Commerce</h1>
+							<Link href="/" className="-ml-2 lg:ml-0">
+								<h1 className="text-base font-bold md:text-xl">E-Commerce</h1>
 							</Link>
 						</div>
 					</div>
-					<nav className="mx-6 flex items-center space-x-4 lg:space-x-6 sm:hidden md:block">
-						{routes.map((route: RoutesType, i: number) => (
+					<nav className="mx-6  items-center space-x-4 lg:space-x-6 sm:hidden hidden md:block">
+						{routes.map((route: RouteType, i: number) => (
 							// eslint-disable-next-line react/jsx-key
-							<Button asChild variant="ghost">
+							<Button asChild variant="ghost" className="text-lg text-gray-300 dark:text-zinc-100">
 								<Link
 									key={i}
 									href={route.href}
 									className="text-sm font-medium transition-colors"
 								>
+									<span className="mr-2">
+									<route.icon size={17}/>	
+									</span>
 									{route.label}
 								</Link>
 							</Button>
 						))}
 					</nav>
-					<div className="flex items-center">
+					<div className="flex items-center justify-end ml-8 md:ml-0">
 						<Button
 							variant="ghost"
 							size="icon"

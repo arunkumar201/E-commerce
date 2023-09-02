@@ -7,6 +7,8 @@ import bcrypt from "bcrypt";
 import { connect } from "@/dbConfig";
 import { disconnect } from "mongoose";
 
+console.debug("🚀 ~ file: ProvidersList.ts:12 ~ process.env.GITHUB_ID :", process.env.GITHUB_ID );
+
 export const authProviders = [
 	GithubProvider({
 		clientId: process.env.GITHUB_ID as string,
