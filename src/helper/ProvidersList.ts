@@ -2,7 +2,7 @@ import Auth0Provider from "next-auth/providers/auth0";
 import CredentialsProvider from "next-auth/providers/credentials";
 import GithubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
-import { User } from "@/models/userModel";
+import { User } from "@/models/user.model";
 import bcrypt from "bcrypt";
 import { connect } from "@/dbConfig";
 import { disconnect } from "mongoose";
